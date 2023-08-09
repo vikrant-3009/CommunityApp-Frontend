@@ -1,0 +1,44 @@
+<div class="hero-part">
+  <div class="content-1">
+    <h1 class="content-heading">THE COMMUNITY</h1>
+    <p class="content-description">
+      Find Solutions. Ask Questions. Share Ideas. <br />Connect with users
+      across the world.
+    </p>
+  </div>
+  <div class="actions">
+    <a (click)="addProduct()" class="btn btn-primary">Add Product</a>
+  </div>
+  <div class="content-2">
+    <div class="box">
+      <img src="../assets/images/register.png" alt="registered" />
+      <div class="inner-box">
+        <p class="box-number">{{ registeredUsersCount }}</p>
+        <p class="box-title">Registered</p>
+      </div>
+    </div>
+    <div class="box">
+      <img src="../assets/images/products.png" alt="products" />
+      <div class="inner-box">
+        <p class="box-number">{{ productsCount }}</p>
+        <p class="box-title">Products</p>
+      </div>
+    </div>
+    <div class="box">
+      <img src="../assets/images/reviews.png" alt="reviews" />
+      <div class="inner-box">
+        <p class="box-number">{{ reviewsCount }}</p>
+        <p class="box-title">Reviews</p>
+      </div>
+    </div>
+  </div>
+  <div class="content-3">
+    <div class="search-bar">
+        <form class="search-form" [formGroup]="searchForm" (submit)="onSubmit()">
+            <input class="search-input" type="text" name="search" formControlName="search" placeholder="Search the Community">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

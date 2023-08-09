@@ -1,0 +1,28 @@
+.container-new {
+    margin: 3%;
+}
+
+.hero-part-1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#productForm {
+    width: 300%;
+}
+
+.hero-part-2 {
+    margin-top: 3%;
+}
+
+th {
+    padding-left: 0.6%;
+}
+
+.error {
+    text-align: center;
+    font-weight: 500;
+    font-size: 150%;
+    padding-top: 6%;
+}

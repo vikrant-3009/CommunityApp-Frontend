@@ -1,0 +1,25 @@
+<div class="hero-part">
+    <form id="productForm" [formGroup]="productForm" (submit)="onSubmit()">
+        <div class="col">
+            <label for="code" class="form-label">Product Code</label>
+            <input type="text" class="form-control" id="code" formControlName="code">
+            <div *ngIf="code?.errors?.['required'] && (code?.dirty || code?.touched)" class="error">Code is required.</div>
+            <div *ngIf="errorMessage" class="error">
+                {{ errorMessage }} <br>
+                Redirecting to Product Page in 5 sec
+            </div>
+          </div>
+          <div class="col">
+            <label for="brand" class="form-label">Product Brand</label>
+            <input type="text" class="form-control" id="brand" formControlName="brand">
+            <div *ngIf="brand?.errors?.['required'] && (brand?.dirty || brand?.touched)" class="error">Product Brand is required.</div>
+            <div></div>
+          </div>
+          <div class="col">
+            <label for="name" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="name" formControlName="name">
+            <div *ngIf="name?.errors?.['required'] && (name?.dirty || name?.touched)" class="error">Product Name is required.</div>
+          </div>
+          <button type="submit" [disabled]="productForm.invalid" class="btn btn-primary">Add</button>
+    </form>
+</div>

@@ -1,0 +1,52 @@
+<div class="container-new" *ngIf="outlet.isActivated === false">
+    <div *ngIf="!productDataFetched">
+        Loading...
+    </div>
+    
+    <div *ngIf="productDataFetched">
+      <div class="hero-part-1">
+        <div class="left">
+            <form [formGroup]="productForm" id="productForm">
+                <div class="row-new">
+                    <label for="productCode" class="col-sm-2 col-form-label">Product Code</label>
+                    <input type="text" name="productCode" formControlName="productCode" readonly>
+                </div>
+                <div class="row-new">
+                    <label for="productBrand" class="col-sm-2 col-form-label">Product Brand</label>
+                    <input type="text" name="brand" formControlName="brand" readonly>
+                </div>
+                <div class="row-new">
+                    <label for="productName" class="col-sm-2 col-form-label">Product Name</label>
+                    <input type="text" name="name" formControlName="name" readonly>
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <button class="btn btn-primary" [routerLink]="['addreview', productCode]">Add Review</button>
+        </div>
+      </div>
+      <div class="hero-part-2">
+        <table class="table table-bordered table-light table-striped">
+          <thead>
+            <tr>
+              <th class="col-2">Rating</th>
+              <th class="col-2">Title</th>
+              <th class="col-3">Description</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <tr *ngFor="let review of reviews">
+                <td>{{ review.rating }}</td>
+                <td>{{ review.title }}</td>
+                <td>{{ review.description }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="reviews.length === 0" class="error">
+            No Reviews to display.
+        </div>
+      </div>
+    </div>
+</div>
+
+<router-outlet #outlet="outlet"></router-outlet>

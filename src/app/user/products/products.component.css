@@ -1,0 +1,34 @@
+.filter-bar {
+    padding: 2% 3%;
+    display: flex;
+    background-color: #f1f1f1;
+    width: 100%;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: auto;
+}
+
+.hero-part {
+    margin: 3%;
+}
+
+.hero-part-heading {
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+th {
+    padding-left: 0.6%;
+}
+
+.error {
+    text-align: center;
+    font-weight: 500;
+    font-size: 150%;
+    padding-top: 6%;
+}

@@ -1,0 +1,32 @@
+<div class="container-new">
+  <div class="hero-part">
+    <table class="table table-bordered table-light table-striped">
+      <thead>
+        <tr>
+          <th class="col-3">Product Code</th>
+          <th class="col-2">Rating</th>
+          <th class="col-2">Title</th>
+          <th class="col-3">Description</th>
+          <th class="col-2" style="text-align: center;">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let review of reviews">
+          <td>{{ review.productCode }}</td>
+          <td>{{ review.rating }}</td>
+          <td>{{ review.title }}</td>
+          <td>{{ review.description }}</td>
+          <td>
+            <div class="actions">
+                <button type="submit" class="btn btn-primary" (click)="openModal(review.id, 'accept')">Accept</button>
+                <button type="submit" class="btn btn-danger" (click)="openModal(review.id, 'reject')">Reject</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="reviews.length === 0" class="error">No Reviews to display.</div>
+    <div *ngIf="isLoading === true" class="error">Loading...</div>
+  </div>
+</div>
+<app-modal *ngIf="showModal" (confirmEvent)="handleConfirmation($event)"></app-modal>

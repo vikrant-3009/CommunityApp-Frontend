@@ -1,0 +1,119 @@
+.hero-part {
+  height: 100vh;
+  padding: 4% 2.5%;
+}
+
+.content-1 {
+  margin-bottom: 2%;
+}
+
+.content-heading {
+  color: rgb(55, 55, 55);
+}
+
+.content-description {
+  font-weight: 400;
+  color: rgb(55, 55, 55);
+}
+
+.btn {
+  padding: 0.75% 0.85%;
+}
+
+.content-2 {
+  display: flex;
+  flex-wrap: wrap;
+  text-align-last: center;
+  padding-top: 1.5%;
+}
+
+.box {
+  flex: 1 0 20%;
+  padding: 3%;
+}
+
+.box > img {
+  padding-bottom: 7%;
+}
+
+.inner-box {
+  display: inline-block;
+  margin-left: 2.5%;
+}
+
+.box-number {
+  text-align: center;
+  font-weight: 500;
+}
+
+.inner-box > p {
+  margin: 0;
+}
+
+.box-title {
+  font-weight: 400;
+}
+
+.box > img {
+  width: 12%;
+}
+
+.content-3 {
+  padding-top: 5%;
+  margin-bottom: 2%;
+  text-align: -webkit-center;
+}
+
+.search-bar {
+  width: 50%;
+}
+
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.35% 2%;
+  margin-right: 2%;
+  border-width: 1.5px;
+  border-top-color: #ccc;
+  border-left-color: #ccc;
+  border-radius: 20px;
+}
+
+.btn {
+  margin-left: 1%;
+}
+
+@media (max-width: 768px) {
+  .box {
+    flex-basis: calc(50% - 20px);
+  }
+
+  .content-2 {
+    padding-top: 5%;
+  }
+
+  .btn {
+    margin-top: 3%;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-part {
+    text-align: center;
+    margin: auto;
+    padding-top: 7%;
+  }
+
+  .content-2 {
+    padding-top: 10%;
+  }
+
+  .box {
+    flex-basis: calc(100% - 20px);
+  }
+}

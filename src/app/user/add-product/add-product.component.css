@@ -1,0 +1,19 @@
+.hero-part {
+    padding: 3%;
+}
+
+#productForm {
+    width: 60%;
+}
+
+.col {
+    margin-bottom: 3%;
+}
+
+.btn {
+    padding: 0.65% 2%;
+}
+
+.error {
+    color: red;
+}

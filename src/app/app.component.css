@@ -1,0 +1,124 @@
+.header {
+  padding: 1.5% 0% 1.5% 2.5%;
+  background-color: #32cc8c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 150%;
+  margin: 0;
+  color: rgb(55, 55, 55);
+  cursor: pointer;
+}
+
+.btn {
+  margin-right: 3%;
+  padding: 0.75% 2%;
+}
+
+.container-new {
+  height: 100vh;
+}
+
+.hero-part {
+  padding: 4% 2.5%;
+}
+
+.content-1 {
+  margin-bottom: 2.5%;
+}
+
+.content-heading {
+  color: rgb(55, 55, 55);
+}
+
+.content-description {
+  font-weight: 400;
+  color: rgb(55, 55, 55);
+}
+
+.actions > a {
+  margin-right: 3%;
+}
+
+.btn {
+  font-size: 90%;
+  padding: 1% 2%;
+  font-weight: 500;
+}
+
+.signup-btn,
+.login-btn {
+  background-color: #32cc8c;
+}
+
+.btn:hover {
+  color: aliceblue;
+}
+
+.content-2 {
+  display: flex;
+  flex-wrap: wrap;
+  text-align-last: center;
+  padding-top: 3%;
+}
+
+.box {
+  flex: 1 0 20%;
+  padding: 3%;
+}
+
+.box > img {
+  padding-bottom: 7%;
+}
+
+.inner-box {
+  display: inline-block;
+  margin-left: 2.5%;
+}
+
+.box-number {
+  text-align: center;
+  font-weight: 500;
+}
+
+.inner-box > p {
+  margin: 0;
+}
+
+.box-title {
+  font-weight: 400;
+}
+
+.box > img {
+  width: 12%;
+}
+
+@media (max-width: 768px) {
+  .box {
+    flex-basis: calc(50% - 20px);
+  }
+
+  .content-2 {
+    padding-top: 6%;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-part {
+    padding-top: 10%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .box {
+    flex-basis: calc(100% - 20px);
+  }
+
+  .content-2 {
+    padding-top: 10%;
+  }
+}

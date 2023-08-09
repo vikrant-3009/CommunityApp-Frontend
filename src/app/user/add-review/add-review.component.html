@@ -1,0 +1,32 @@
+<div class="container-new">
+    <div class="hero-part-1">
+        <h2 class="heading">Post Review</h2>
+        <form [formGroup]="reviewForm" id="reviewForm">
+            <div class="row-new">
+                <label for="title" class="col-md-1 col-form-label">Title</label>
+                <input type="text" name="title" formControlName="title">
+                <div *ngIf="title?.errors?.['required'] && (title?.dirty || title?.touched)" class="error">Title is required.</div>
+                <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+            </div>
+            <div class="row-new">
+                <label for="rating" class="col-sm-1 col-form-label">Rating</label>
+                <input type="radio" name="rating" value="1" formControlName="rating"><span>1</span>
+                <input type="radio" name="rating" value="2" formControlName="rating"><span>2</span>
+                <input type="radio" name="rating" value="3" formControlName="rating"><span>3</span>
+                <input type="radio" name="rating" value="4" formControlName="rating"><span>4</span>
+                <input type="radio" name="rating" value="5" formControlName="rating"><span>5</span>
+                <div *ngIf="rating?.errors?.['required'] && (rating?.dirty || rating?.touched)" class="error">Rating is required.</div>
+            </div>
+            <div class="row-new">
+                <label for="description" class="col-sm-1 col-form-label">Description</label>
+                <textarea name="description" formControlName="description"></textarea>
+                <div *ngIf="description?.errors?.['required'] && (description?.dirty || description?.touched)" class="error">Description is required.</div>
+                <div *ngIf="description?.errors?.['minlength']" class="error">Description must contain minimum 30 characters.</div>
+                <div *ngIf="description?.errors?.['maxlength']" class="error">Description must contain maximum 400 characters.</div>
+            </div>
+            <div class="row-new">
+                <button (click)="onSubmit()" class="btn btn-primary" [disabled]="reviewForm.invalid">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

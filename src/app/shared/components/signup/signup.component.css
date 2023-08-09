@@ -1,0 +1,41 @@
+.container-new {
+    height: 100vh;
+}
+
+.caption {
+    padding-top: 5%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.row {
+    padding: 0 30%;
+}
+
+.actions {
+    text-align: center;
+}
+
+.btn {
+    margin-top: 2%;
+    margin-right: 5%;
+    padding: 1.35% 3.5%;
+    font-weight: 500;
+    color: white;
+}
+
+.submit:hover {
+    background-color: #40a078;
+}
+
+.submit {
+    background-color: #54bd91;
+}
+
+.row > a {
+    text-align: end;
+}
+
+.error {
+    color: red;
+}

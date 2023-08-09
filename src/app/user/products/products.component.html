@@ -1,0 +1,65 @@
+<div class="container-new" *ngIf="outlet.isActivated == false">
+    <form class="filter-bar" [formGroup]="filterForm">
+        <h4>Filter Menu</h4>
+        <div class="box">
+            <label for="code">Code</label>
+            <select class="dropdown" formControlName="productCode">
+                <option *ngFor="let product of products">
+                    {{ product.productCode }}
+                </option>
+            </select>
+        </div>
+        <div class="box">
+            <label for="brand">Brand</label>
+            <select class="dropdown" formControlName="brand">
+                <option *ngFor="let product of products">
+                    {{ product.brand }}
+                </option>
+            </select>
+        </div>
+        <div class="box">
+            <label for="productName">ProductName</label>
+            <select class="dropdown" formControlName="productName">
+                <option *ngFor="let product of products">
+                    {{ product.productName }}
+                </option>
+            </select>
+        </div>
+        <div class="action">
+            <button class="btn btn-primary" (click)="submitFilters()">Search</button>
+        </div>
+    </form>
+
+    <div class="hero-part">
+        <h3 class="hero-part-heading">Products Details</h3>
+        <table class="table table-bordered table-light table-striped" id="products-table">
+            <thead>
+            <tr>
+                <th class="col-2">Code</th>
+                <th class="col-2">Brand</th>
+                <th class="col-2">Product Name</th>
+                <th class="col-2">No of Reviews</th>
+                <th class="col-2">Average Ratings</th>
+                <th class="col-2">Actions</th>
+            </tr>
+            </thead>
+            <tbody class="table-group-divider">
+            <tr *ngFor="let product of products">
+                <td>{{ product.productCode }}</td>
+                <td>{{ product.brand }}</td>
+                <td>{{ product.productName }}</td>
+                <td>{{ product.reviewsApproved }}</td>
+                <td *ngIf="product.reviewTotal > 0">{{ product.reviewTotal/product.reviewsApproved | number:'1.1-2' }}</td>
+                <td *ngIf="product.reviewTotal === 0">0</td>
+                <td>
+                    <a [routerLink]="[product.productCode, 'reviews']" class="btn btn-primary">Open</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div *ngIf="errorMessage" class="error">
+            {{ errorMessage }}
+        </div>
+    </div>
+</div>
+<router-outlet #outlet="outlet"></router-outlet>

@@ -1,0 +1,21 @@
+<div class="container-new bg-light bg-gradient text-dark">
+    <p class="caption">Login with your email and password:</p>
+    <form class="row g-3" [formGroup]="loginForm">
+        <div class="col-md-12">
+            <label for="email">Email*</label>
+            <input type="email" class="form-control" name="email" formControlName="email">
+            <div *ngIf="email?.errors?.['required'] && (email?.dirty || email?.touched)" class="error">Email is required</div>
+            <div *ngIf="email?.errors?.['email']" class="error">Invalid Email</div>
+        </div>
+        <div class="col-md-12">
+            <label for="password">Password*</label>
+            <input type="password" class="form-control" name="password" formControlName="password">
+            <div *ngIf="password?.errors?.['required'] && (password?.dirty || password?.touched)" class="error">Password is required</div>
+            <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+        </div>
+        <div class="col actions">
+            <button type="submit" (click)="onSubmit()" class="btn submit" [disabled]="loginForm.invalid">Login</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+        </div>
+    </form>
+</div>
